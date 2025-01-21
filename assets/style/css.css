@@ -1,0 +1,285 @@
+/* general config */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Blue */
+    --blue-900: #13183f;
+    --blue-600: #666ca3;
+
+    /* Pink */
+    --pink-600: #f74780;
+    --pink-300: #ffa7c3;
+
+    /* Grey */
+    --grey: #83869a;
+
+    /* White */
+    --white: #fff;
+
+    /* Gradients */
+    --gradient-pink: #f02aa6, #ff6f48 ;
+    --gradient-purple: #4851ff, #f02aa6;
+
+    /* Padding */
+    /* Padding-mobile */
+    --padding-mobile: 20px;
+
+    /* Padding-tablet */
+    --padding-tablet: 44px;
+
+    /* Padding desktop */
+    --padding-desktop: 80px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Typography */
+.text-present-1, .text-present-2, .text-present-3, .text-present-4, .text-present-5, .text-present-6, .text-present-7 {
+    font-family: "Plus Jakarta Sans", serif;
+}
+
+.text-present-1, .text-present-2, .text-present-3, .text-present-4, .text-present-6 {
+    line-height: 120%;
+    letter-spacing: 0;
+    font-weight: 800;
+}
+
+.text-present-1 {
+    font-size: 40px;
+}
+
+.text-present-2 {
+    font-size: 32px;
+}
+
+.text-present-3 {
+    font-size: 24px;
+}
+
+.text-present-4 {
+    font-size: 20px;
+}
+
+.text-present-5 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+.text-present-6 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.text-present-7 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+@media screen and (min-width: 1200) {    
+    .text-present-1 {
+        font-size: 56px;
+    }
+    
+    .text-present-2 {
+        font-size: 40px;
+    }
+    
+    .text-present-3 {
+        font-size: 32px;
+    }
+    
+    .text-present-4 {
+        font-size: 24px;
+    }
+    
+    .text-present-6 {
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .text-present-7 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+/* Logo */
+.logo {
+    width: 111px;
+    height: 28px;
+}
+
+/* Button */
+
+.button {
+    width: 100%;
+    max-width: 140px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    color: var(--white);
+    transition: all 1s ease-in-out;
+}
+
+.button-black {
+    background-color: var(--blue-900);
+}
+
+.button-black:hover {
+    background-color: var(--blue-600);
+} 
+
+.button-orange {
+    background-image: linear-gradient(var(--gradient-pink));
+}
+
+.button-orange:hover {
+    background: linear-gradient(rgba(255, 112, 72, 0.5), rgba(240, 42, 167, 0.5));
+}
+
+.button-purple {
+    background: linear-gradient(var(--gradient-purple));
+}
+
+.button-purple:hover {
+    background: linear-gradient(rgba(72, 81, 255, 0.5), rgba(240, 42, 167, 0.5));
+}
+
+@media screen and (min-width: 768px) {
+    .button {
+        width: 100%;
+        max-width: 168px;
+        height: 59px;
+    }
+}
+
+/* Button link */
+
+.link {
+    color: red;
+    transition: all .5s ease-in-out;
+}
+
+.link:hover {
+    color: var(--pink-300);
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 var(--padding-mobile);
+    position: relative;
+    z-index: 999;
+}
+
+@media screen and (min-width: 768px) {
+    #header {
+        padding: 0 var(--padding-tablet);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #header {
+        padding: 0 var(--padding-desktop);
+    }
+}
+
+/* Main */
+#main {
+    padding: 0 var(--padding-mobile);
+}
+
+#main .main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 48px;
+    margin: 64px 0;
+}
+
+/* Left */
+#main .main-header .left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#main .main-header .left h1 {
+    color: var(--blue-900);
+}
+
+#main .main-header .left p {
+    color: var(--grey);
+}
+
+/* Right */
+#main .main-header .right .img-hero {
+    width: 345px;
+    height: 320px;
+    background: url(../image/image-hero-mobile.png)no-repeat center / cover;
+}
+
+@media screen and (min-width: 768px) {
+    /* Main */
+
+    #main {
+        padding: 0 var(--padding-tablet);
+    }
+
+    #main .main-header {
+        flex-direction: row;
+        margin: 0;
+        height: 528px;
+    }
+
+    /* Left */
+    #main .main-header .left {
+        width: 50%;
+        flex: 1;
+    }
+
+    /* Right */
+
+    #main .main-header .right {
+        width: 50%;
+        height: 598px;
+    }
+
+    #main .main-header .right .img-hero {
+        background: url(../image/image-hero-tablet.png) no-repeat left / cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* Main */
+    #main {
+        padding: 0 var(--padding-desktop);
+    }
+
+    /* Right */
+    #main .main-header .right .img-hero {
+        background: url(../image/image-hero-desktop.png) no-repeat left / cover;
+        width: 100%;
+        height: 100%;
+    }
+}
