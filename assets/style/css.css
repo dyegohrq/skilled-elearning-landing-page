@@ -276,6 +276,12 @@ a {
         padding: 0 var(--padding-desktop);
     }
 
+    /* Left */
+    #main .main-header .left {
+        width: 10%;
+        flex: 1;
+    }
+
     /* Right */
     #main .main-header .right .img-hero {
         background: url(../image/image-hero-desktop.png) no-repeat left / cover;
