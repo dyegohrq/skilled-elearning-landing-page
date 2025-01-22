@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 :root {
     /* Blue */
     --blue-900: #13183f;
@@ -133,6 +139,7 @@ a {
     border-radius: 28px;
     color: var(--white);
     transition: all 1s ease-in-out;
+    padding: 24px 12px;
 }
 
 .button-black {
@@ -202,10 +209,6 @@ a {
 }
 
 /* Main */
-#main {
-    padding: 0 var(--padding-mobile);
-}
-
 #main .main-header {
     display: flex;
     flex-direction: column;
@@ -213,6 +216,7 @@ a {
     width: 100%;
     gap: 48px;
     margin: 64px 0;
+    padding: 0 var(--padding-mobile);
 }
 
 /* Left */
@@ -240,19 +244,16 @@ a {
 @media screen and (min-width: 768px) {
     /* Main */
 
-    #main {
-        padding: 0 var(--padding-tablet);
-    }
-
     #main .main-header {
         flex-direction: row;
         margin: 0;
         height: 528px;
+        padding: 0 var(--padding-tablet);
     }
 
     /* Left */
     #main .main-header .left {
-        width: 50%;
+        width: 60%;
         flex: 1;
     }
 
@@ -260,19 +261,33 @@ a {
 
     #main .main-header .right {
         width: 50%;
-        height: 598px;
+        height: 535px;
     }
 
     #main .main-header .right .img-hero {
         background: url(../image/image-hero-tablet.png) no-repeat left / cover;
         width: 100%;
         height: 100%;
+        position: relative;
+        top: -6%;
+        right: -19%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #main .main-header .right {
+        height: 734px;
+    }
+
+    #main .main-header .right .img-hero {
+        top: -8%;
+        right: -15%
     }
 }
 
 @media screen and (min-width: 1200px) {
     /* Main */
-    #main {
+    #main .main-header {
         padding: 0 var(--padding-desktop);
     }
 
@@ -283,9 +298,120 @@ a {
     }
 
     /* Right */
+    
+
     #main .main-header .right .img-hero {
         background: url(../image/image-hero-desktop.png) no-repeat left / cover;
         width: 100%;
         height: 100%;
+        top: -12%;
+        right: -15%
+    }
+}
+
+/* Check out */
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: linear-gradient(to bottom ,#fff, #F0F1FF);
+    padding:64px var(--padding-mobile) 80px var(--padding-mobile) ;
+    width: 100%;
+    margin: auto;
+}
+
+
+.checkout .title-checkout {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    background: linear-gradient(var(--gradient-pink));
+    border-radius: 15px;
+    color:var(--white);
+}
+
+.checkout .card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 64px 32px 32px 40px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.checkout .card .icon-card {
+    position: absolute;
+    top: -26px;
+}
+
+.checkout .card h2 {
+    color: var(--blue-900);
+}
+
+.checkout .card p {
+    color: var(--grey);
+}
+
+@media screen and (min-width: 768px) {
+    .checkout {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr) ;
+        grid-template-columns: repeat(2 , 1fr);
+        margin: 64px 0 0 0;
+        padding: 64px var(--padding-tablet) 140px var(--padding-tablet);
+    }
+
+    .checkout .title-checkout {
+        max-width: 100%;
+    }
+
+    .checkout .card {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .checkout {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        padding: 64px var(--padding-desktop) 144px var(--padding-desktop);
+    }
+}
+
+/* Footer */
+#footer {
+    width: 100%;
+    height: 96px;
+    background-color: var(--blue-900);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-mobile);
+}
+
+#footer .logo-footer, #footer .link-footer {
+    display: flex;
+    width: 100%;
+}
+
+#footer .link-footer {
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+    #footer {
+        padding: 0 var(--padding-tablet);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #footer {
+        padding: 0 var(--padding-desktop);
     }
 }
